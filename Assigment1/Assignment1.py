@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun May 28 19:58:11 2019
+Created on Wed May 29 19:58:11 2019
 Assignment 1
 @author: Karan Vijay Singh
 Command to run script
 python Assignment1.py -p "path to data files"
 """
 
-#import argparse
 import re
 import numpy as np
 import sys
@@ -32,19 +31,15 @@ if __name__ == "__main__":
     #removing punctuations and stopwords from sentences
     for line in (positive_data):
         processed_line = re.sub(r'[!"#$%&()*+\/:;<=>@[\\\]^`{|}~\t\n]', '', line)
-        processed_line = re.sub(r'[\']',' ',   processed_line) #remove_Apostophe    
+        processed_line = re.sub(r'[\']'," ' ",   processed_line) #remove_Apostophe    
         processed_line = re.sub(r'[\.]',' . ',   processed_line) #replace , with ' , '
         processed_line = re.sub(r'[\,]',' , ',   processed_line) #replace . with ' . '
+        processed_line = re.sub(r'[-]',' - ',   processed_line) #replace . with ' . '
         #label.append("1")
         text.append(processed_line.split())
         processed_without_stop_line = [word for word in processed_line.split() if word not in stopwordList]
         stopword_removed_text.append(processed_without_stop_line)
     
-    # create a dataframe using texts and lables
-    #df = pd.DataFrame()
-    #df['text'] = text
-    #df['stopword_removed_text'] = stopword_removed_text
-    #trainDF['label'] = label
     
     
     #splitting the dataset into train, validation and test
@@ -69,8 +64,5 @@ if __name__ == "__main__":
     
     df = pd.DataFrame(data ={"test":test_list_no_stopword})
     df.to_csv("test_no_stopword.csv", index = False)
-    #
-        
-    #cols_without_stopwords = ['stopword_removed_text']
-    #cols_with_stopwords = ['text']
+    
     
