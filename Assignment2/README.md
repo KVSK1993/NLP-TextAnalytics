@@ -3,6 +3,7 @@
   
   
 Classification accuracy is as follows:
+
 Stopwords removed| text features | Accuracy (test set)
 --- | --- | ---
 yes | unigrams | 71.97%
