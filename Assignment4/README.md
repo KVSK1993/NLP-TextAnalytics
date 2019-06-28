@@ -1,5 +1,6 @@
-## Assignment 4 
- 
+## Assignment 4  
+
+
 **Student ID :** `20745105`  
   
 Report your classification accuracy results in a table with three different activation functions in the hidden layer (ReLU, sigmoid and tanh). What effect do activation functions have on your results? What effect does addition of L2-norm regularization have on the results? What effect does dropout have on the results? Explain your intuitions briefly (up to 10 sentences).
