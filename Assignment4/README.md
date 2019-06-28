@@ -6,6 +6,7 @@ Report your classification accuracy results in a table with three different acti
 
 
 Classification accuracy is as follows:
+
 Activation Function| L2 Regularisation | Dropout | Accuracy (val set)
 --- | --- | --- | ---
 relu | - | - | 0.7352
